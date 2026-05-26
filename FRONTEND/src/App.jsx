@@ -12,7 +12,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const response = await axios.post('https://mern-node-auth.onrender.com/api/auth/register', formData);
       setStatusMessage({ text: "✅ " + response.data.message, type: 'success' });
     } catch (error) {
       setStatusMessage({ text: "❌ " + (error.response?.data?.message || error.message), type: 'error' });
@@ -59,7 +59,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post('https://mern-node-auth.onrender.com/api/auth/login', formData);
       localStorage.setItem('token', response.data.token);
       navigate('/dashboard');
     } catch (error) {
@@ -108,7 +108,7 @@ function Dashboard() {
         return;
       }
       try {
-        const response = await axios.get('http://localhost:5000/api/auth/me', {
+        const response = await axios.get('https://mern-node-auth.onrender.com/api/auth/me', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUserData(response.data.data);
@@ -123,7 +123,7 @@ function Dashboard() {
   const handleFetchAllUsers = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.get('http://localhost:5000/api/auth/users', {
+      const response = await axios.get('https://mern-node-auth.onrender.com/api/auth/users', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setAllUsers(response.data.data);
