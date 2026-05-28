@@ -78,4 +78,4 @@ To run this project locally, you will need to add the following environment vari
 git clone https://github.com/das690/authentication--authorization.git
 cd your-repo-name 
  
- 
+Postman documentation link : https://documenter.getpostman.com/view/54466106/2sBXwmRtQH
