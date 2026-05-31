@@ -78,4 +78,19 @@ To run this project locally, you will need to add the following environment vari
 git clone https://github.com/das690/authentication--authorization.git
 cd your-repo-name 
  
-Postman documentation link : https://documenter.getpostman.com/view/54466106/2sBXwmRtQH
+## 📡 API Reference & Postman Documentation
+
+The complete API documentation, including all endpoints, expected request bodies, headers, and **example JSON responses**, is hosted on Postman.
+
+👉 **[CLICK HERE FOR FULL POSTMAN API DOCUMENTATION](https://documenter.getpostman.com/view/54466106/2sBXwmRtQH)**
+
+### Quick Endpoint Overview:
+
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/auth/register` | Creates a new user account | No |
+| `POST` | `/api/auth/login` | Authenticates user & returns JWT | No |
+| `GET` | `/api/auth/me` | Returns current logged-in user profile | **Yes (Bearer Token)** |
+| `GET` | `/api/auth/users` | Returns array of all registered users | **Yes (Admin Role Only)** |
+
+> **Note to Reviewer:** Please visit the Postman Documentation link above to see the exact Request payloads and Saved Example Responses for both success and error states.
